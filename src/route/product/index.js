@@ -9,11 +9,23 @@ router.get('', (request,response)=>{
     })
 })
 
+/* GET users listing. */
+router.get('/getItem', (request,response)=>{
+    dbOperation.getItem(request.query).then(result => {
+        response.json(result[0]);
+    })
+})
+9
 router.get('/getStockList', (request,response)=>{
-    console.log(request.url);
     dbOperation.getStockList(request.query).then(result => {
         response.json(result[0]);
     })
+})
+
+router.post('/workMoveProduct', (request, response) => {
+    dbOperation.workMoveProduct(request.body).then(result => {   
+            response.json(result); 
+    })  
 })
 
 module.exports = router;

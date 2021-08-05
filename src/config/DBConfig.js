@@ -5,8 +5,10 @@ const config = {
     database: 'snserp',
     options : {
         trustedconnection : true,
-        enableArithAbort : true
+        enableArithAbort : true,
+        // abortTransactionOnError: true // <-- SET XACT_ABORT ON
     }, 
+    multipleStatements : true
     // port : 1433
 }
 
